@@ -18,7 +18,8 @@ export default {
   },
   data() {
     return {
-      video: require("../src/assets/video/destiny.mp4")
+      video: require("@/assets/video/destiny.mp4"),
+      image: require("@/assets/images/ghost.png")
     };
   },
   methods: {
@@ -36,6 +37,10 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  overflow: hidden;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +66,7 @@ export default {
   right: 0;
   width: 388px;
   height: 177px;
-  background-image: url("./assets/images/ghost.png");
+  background-image: url("~@/assets/images/ghost.png");
 }
 </style>
 
