@@ -1,9 +1,17 @@
 <template>
   <div id="app">
-    <flip-countdown deadline="2020-10-10 00:00:00"></flip-countdown>
+    <flip-countdown deadline="2020-11-07 20:00:00"></flip-countdown>
     <video controls autoplay muted loop class="video">
       <source :src="video" type="video/mp4" />
     </video>
+    <!-- <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/Ms90okhAbTw"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe> -->
     <div class="ghost"></div>
   </div>
 </template>
@@ -42,12 +50,8 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 
 .video {
@@ -60,8 +64,23 @@ body {
   pointer-events: none;
 }
 
+iframe {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  height: 450px;
+  margin-top: 350px;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    margin-top: 150px;
+  }
+}
+
 .ghost {
-  position: absolute;
+  position: fixed;
   bottom: -78px;
   right: 0;
   width: 388px;
@@ -74,6 +93,7 @@ body {
 ::v-deep .flip-clock {
   z-index: 9;
   position: relative;
+  padding-top: 150px;
 
   @include media-breakpoint-up(sm) {
     padding-top: 550px;
