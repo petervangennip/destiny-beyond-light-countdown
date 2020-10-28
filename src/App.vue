@@ -1,18 +1,39 @@
 <template>
   <div id="app">
-    <flip-countdown deadline="2020-11-07 20:00:00"></flip-countdown>
     <video controls autoplay muted loop class="video">
       <source :src="video" type="video/mp4" />
     </video>
-    <!-- <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/Ms90okhAbTw"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe> -->
     <div class="ghost"></div>
+    <div class="content">
+      <flip-countdown deadline="2020-11-07 20:00:00"></flip-countdown>
+      <div class="container oneliner">
+        <p>D2 started something new</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/n0GE1nV9UaI"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <!-- <div class="col-12 col-md-12">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/FDocyBPscFc"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div> -->
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -45,13 +66,44 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  overflow: hidden;
-}
+// body {
+//   overflow: hidden;
+// }
 
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .oneliner {
+    position: relative;
+    margin-bottom: 80px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    p {
+      font-size: 32px;
+      line-height: 1.2;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0px 1px 5px #000;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 48px;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: 65px;
+      }
+    }
+  }
 }
 
 .video {
@@ -69,13 +121,16 @@ iframe {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 800px;
-  height: 450px;
-  margin-top: 350px;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
 
   @include media-breakpoint-down(sm) {
-    width: 100%;
-    margin-top: 150px;
+    height: auto;
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 0;
   }
 }
 
@@ -83,9 +138,13 @@ iframe {
   position: fixed;
   bottom: -78px;
   right: 0;
-  width: 388px;
+  width: 100%;
   height: 177px;
   background-image: url("~@/assets/images/ghost.png");
+
+  @include media-breakpoint-up(sm) {
+    width: 388px;
+  }
 }
 </style>
 
@@ -93,10 +152,14 @@ iframe {
 ::v-deep .flip-clock {
   z-index: 9;
   position: relative;
-  padding-top: 150px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 0;
+  padding-right: 0;
 
-  @include media-breakpoint-up(sm) {
-    padding-top: 550px;
+  @include media-breakpoint-up(md) {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   &__slot {
