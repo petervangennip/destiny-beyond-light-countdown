@@ -7,30 +7,30 @@
     <div class="content">
       <flip-countdown deadline="2020-11-07 20:00:00"></flip-countdown>
       <div class="container oneliner">
-        <p>D2 started something new</p>
+        <p>For Cayde, we battled together</p>
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-12">
+          <div class="col-12 col-md-6">
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/n0GE1nV9UaI"
+              src="https://www.youtube.com/embed/Bb8iUqEOwWc"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
           </div>
-          <!-- <div class="col-12 col-md-12">
+          <div class="col-12 col-md-6">
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/FDocyBPscFc"
+              src="https://www.youtube.com/embed/v2dVMmdJfOA"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
